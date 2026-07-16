@@ -14,15 +14,16 @@ services:
         value: production
       - key: NODE_VERSION
         value: "22"
+      # 공개 접속 URL (배포 후 실제 도메인으로 덮어쓸 수 있음)
       - key: NEXT_PUBLIC_SITE_URL
-        sync: false
+        value: https://cyberguard-utm-landing.onrender.com
       - key: NEXT_PUBLIC_GTM_ID
-        sync: false
+        value: ""
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_SERVICE_ROLE_KEY
         sync: false
       - key: NEXT_PUBLIC_TURNSTILE_SITE_KEY
-        sync: false
+        value: ""
       - key: TURNSTILE_SECRET_KEY
-        sync: false
+        value: ""
