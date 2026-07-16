@@ -93,14 +93,26 @@ src/config/site.ts
 
 ## Vercel 배포 방법
 
-1. GitHub 등에 저장소 푸시
-2. [Vercel](https://vercel.com)에서 Import
-3. Framework Preset: Next.js
-4. Environment Variables에 `.env.local`과 동일한 값 등록
-   - 특히 `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_GTM_ID`
-5. Deploy
+이 프로젝트는 **Render** 배포를 사용합니다. Vercel은 사용하지 않습니다.
 
-배포 후 `NEXT_PUBLIC_SITE_URL`을 실제 도메인으로 맞추고 재배포하세요.
+## Render 배포 방법
+
+1. GitHub 저장소: https://github.com/kkkhhhjjj0139/cyberguard-utm-landing
+2. Blueprint 연결: https://dashboard.render.com/blueprint/new?repo=https://github.com/kkkhhhjjj0139/cyberguard-utm-landing
+3. Dashboard에서 secret 환경변수 입력
+   - `NEXT_PUBLIC_SITE_URL` (배포 후 실제 URL로 재설정 권장)
+   - `NEXT_PUBLIC_GTM_ID` (선택)
+   - `SUPABASE_URL`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+   - Turnstile 키 (선택)
+4. Apply 후 배포 완료까지 대기
+5. 헬스체크: `https://<서비스명>.onrender.com/api/health`
+
+`render.yaml`이 저장소 루트에 포함되어 있으며, `main` 푸시 시 자동 배포됩니다.
+
+## (참고) 이전 문서의 Vercel 안내
+
+아래는 초기 스펙 참고용이며, 실제 배포는 Render만 사용합니다.
 
 ## 폼 테스트 방법
 
