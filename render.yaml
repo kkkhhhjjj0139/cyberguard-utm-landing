@@ -2,8 +2,7 @@ services:
   - type: web
     name: cyberguard-utm-landing
     runtime: node
-    # free는 유휴 시 슬립됨. 상시 오픈을 위해 starter 사용
-    plan: starter
+    plan: free
     region: singapore
     branch: main
     buildCommand: npm ci && npm run build
